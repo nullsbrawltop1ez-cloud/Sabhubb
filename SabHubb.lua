@@ -537,3 +537,110 @@ end)
 -- FOV
 local fovLabel = Instance.new("TextLabel")
 fovLabel.Size = UDim2
+fovLabel.Size = UDim2.new(0, 80, 0, 20)
+fovLabel.Position = UDim2.new(0.5, -80, 0, 233)
+fovLabel.BackgroundTransparency = 1
+fovLabel.Font = Enum.Font.GothamSemibold
+fovLabel.Text = "FOV: " .. FOV
+fovLabel.TextColor3 = Color3.fromRGB(200, 200, 210)
+fovLabel.TextSize = 13
+fovLabel.TextXAlignment = Enum.TextXAlignment.Left
+fovLabel.Parent = content
+
+local fovMinus = Instance.new("TextButton")
+fovMinus.Size = UDim2.new(0, 30, 0, 24)
+fovMinus.Position = UDim2.new(0.5, 10, 0, 258)
+fovMinus.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+fovMinus.Text = "−"
+fovMinus.TextColor3 = Color3.new(1, 1, 1)
+fovMinus.TextSize = 16
+fovMinus.Font = Enum.Font.GothamBold
+fovMinus.AutoButtonColor = false
+fovMinus.Parent = content
+local fovMinusCorner = Instance.new("UICorner")
+fovMinusCorner.CornerRadius = UDim.new(0, 6)
+fovMinusCorner.Parent = fovMinus
+fovMinus.MouseButton1Click:Connect(function()
+    FOV = math.max(20, FOV - 10)
+    fovLabel.Text = "FOV: " .. FOV
+end)
+
+local fovPlus = Instance.new("TextButton")
+fovPlus.Size = UDim2.new(0, 30, 0, 24)
+fovPlus.Position = UDim2.new(0.5, 50, 0, 258)
+fovPlus.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+fovPlus.Text = "+"
+fovPlus.TextColor3 = Color3.new(1, 1, 1)
+fovPlus.TextSize = 16
+fovPlus.Font = Enum.Font.GothamBold
+fovPlus.AutoButtonColor = false
+fovPlus.Parent = content
+local fovPlusCorner = Instance.new("UICorner")
+fovPlusCorner.CornerRadius = UDim.new(0, 6)
+fovPlusCorner.Parent = fovPlus
+fovPlus.MouseButton1Click:Connect(function()
+    FOV = math.min(300, FOV + 10)
+    fovLabel.Text = "FOV: " .. FOV
+end)
+
+-- Spin Speed
+local spinLabel = Instance.new("TextLabel")
+spinLabel.Size = UDim2.new(0, 100, 0, 20)
+spinLabel.Position = UDim2.new(0.5, -90, 0, 292)
+spinLabel.BackgroundTransparency = 1
+spinLabel.Font = Enum.Font.GothamSemibold
+spinLabel.Text = "Spin Speed: " .. spinSpeed
+spinLabel.TextColor3 = Color3.fromRGB(200, 200, 210)
+spinLabel.TextSize = 13
+spinLabel.TextXAlignment = Enum.TextXAlignment.Left
+spinLabel.Parent = content
+
+local spinMinus = Instance.new("TextButton")
+spinMinus.Size = UDim2.new(0, 30, 0, 24)
+spinMinus.Position = UDim2.new(0.5, 30, 0, 317)
+spinMinus.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+spinMinus.Text = "−"
+spinMinus.TextColor3 = Color3.new(1, 1, 1)
+spinMinus.TextSize = 16
+spinMinus.Font = Enum.Font.GothamBold
+spinMinus.AutoButtonColor = false
+spinMinus.Parent = content
+local spinMinusCorner = Instance.new("UICorner")
+spinMinusCorner.CornerRadius = UDim.new(0, 6)
+spinMinusCorner.Parent = spinMinus
+spinMinus.MouseButton1Click:Connect(function()
+    spinSpeed = math.max(1, spinSpeed - 1)
+    spinLabel.Text = "Spin Speed: " .. spinSpeed
+end)
+
+local spinPlus = Instance.new("TextButton")
+spinPlus.Size = UDim2.new(0, 30, 0, 24)
+spinPlus.Position = UDim2.new(0.5, 70, 0, 317)
+spinPlus.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+spinPlus.Text = "+"
+spinPlus.TextColor3 = Color3.new(1, 1, 1)
+spinPlus.TextSize = 16
+spinPlus.Font = Enum.Font.GothamBold
+spinPlus.AutoButtonColor = false
+spinPlus.Parent = content
+local spinPlusCorner = Instance.new("UICorner")
+spinPlusCorner.CornerRadius = UDim.new(0, 6)
+spinPlusCorner.Parent = spinPlus
+spinPlus.MouseButton1Click:Connect(function()
+    spinSpeed = math.min(20, spinSpeed + 1)
+    spinLabel.Text = "Spin Speed: " .. spinSpeed
+end)
+
+-- Версия
+local ver = Instance.new("TextLabel")
+ver.Size = UDim2.new(1, 0, 0, 15)
+ver.Position = UDim2.new(0, 0, 1, -17)
+ver.BackgroundTransparency = 1
+ver.Font = Enum.Font.Gotham
+ver.Text = "v1.0"
+ver.TextColor3 = Color3.fromRGB(100, 100, 120)
+ver.TextSize = 10
+ver.TextXAlignment = Enum.TextXAlignment.Right
+ver.Parent = content
+
+print("✅ Sabb v1.0 загружен! Вкладки, закругление, всё работает.")
