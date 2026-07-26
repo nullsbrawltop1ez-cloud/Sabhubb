@@ -536,7 +536,6 @@ end)
 
 -- FOV
 local fovLabel = Instance.new("TextLabel")
-fovLabel.Size = UDim2
 fovLabel.Size = UDim2.new(0, 80, 0, 20)
 fovLabel.Position = UDim2.new(0.5, -80, 0, 233)
 fovLabel.BackgroundTransparency = 1
